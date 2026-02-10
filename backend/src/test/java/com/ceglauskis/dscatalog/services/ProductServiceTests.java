@@ -78,6 +78,18 @@ public class ProductServiceTests {
     }
 
     @Test
+    public void insertShouldReturnProductDTOWhenIdIsValid(){
+        Mockito.when(repository.save(ArgumentMatchers.any())).thenReturn(product);
+
+        ProductDTO result = service.insert(dto);
+
+        Assertions.assertNotNull(result);
+        Assertions.assertEquals(product.getId(), result.getId());
+
+        Mockito.verify(repository, Mockito.times(1)).save(ArgumentMatchers.any());
+    }
+
+    @Test
     public void updateShouldReturnProductWhenIdIsValid(){
         Mockito.when(repository.save(ArgumentMatchers.any())).thenReturn(product);
         Mockito.when(repository.getReferenceById(existingId)).thenReturn(product);
