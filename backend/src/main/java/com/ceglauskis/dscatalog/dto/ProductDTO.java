@@ -6,6 +6,7 @@ import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -17,6 +18,7 @@ public class ProductDTO implements Serializable {
 
     private Long id;
     @NotBlank(message = "Required field")
+    @Size(min = 5, max = 50, message = "The name length should be between 5 and 50.")
     private String name;
     private String description;
     @Positive(message = "Price should be a positive value")
