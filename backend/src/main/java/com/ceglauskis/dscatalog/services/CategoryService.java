@@ -38,7 +38,7 @@ public class CategoryService {
     @Transactional
     public CategoryDTO insert(CategoryDTO dto) {
         Category entity = new Category();
-        entity.setName(dto.getName());
+        copyDtoToEntity(dto, entity);
         entity = repository.save(entity);
         return new CategoryDTO(entity);
     }
@@ -48,7 +48,7 @@ public class CategoryService {
         try {
             Category entity = repository.getReferenceById(id);
             entity.setName(dto.getName());
-            entity = repository.save(entity);
+            copyDtoToEntity(dto, entity);
             return new CategoryDTO(entity);
         }catch (EntityNotFoundException e){
             throw new ResourceNotFoundException("Id not found: " + id);
@@ -66,5 +66,9 @@ public class CategoryService {
         catch (DataIntegrityViolationException e) {
             throw new DatabaseException("Integrity violation");
         }
+    }
+
+    private void copyDtoToEntity(CategoryDTO dto, Category entity) {
+        entity.setName(dto.getName());
     }
 }

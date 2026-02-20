@@ -85,7 +85,5 @@ public class ProductService {
             Category category = categoryRepository.getReferenceById(categoryDTO.getId());
             entity.getCategories().add(category);
         }
-
-
     }
 }
