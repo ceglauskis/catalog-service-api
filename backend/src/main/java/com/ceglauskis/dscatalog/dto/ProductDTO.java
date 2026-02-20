@@ -3,6 +3,9 @@ package com.ceglauskis.dscatalog.dto;
 import com.ceglauskis.dscatalog.entities.Category;
 import com.ceglauskis.dscatalog.entities.Product;
 import jakarta.persistence.Column;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.Positive;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -13,12 +16,15 @@ import java.util.Set;
 public class ProductDTO implements Serializable {
 
     private Long id;
+    @NotBlank(message = "Required field")
     private String name;
     private String description;
+    @Positive(message = "Price should be a positive value")
     private Double price;
     private String imgUrl;
 
     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+    @PastOrPresent(message = "Products date doesn't to be a future")
     private Instant date;
 
     private List<CategoryDTO> categories = new ArrayList<>();

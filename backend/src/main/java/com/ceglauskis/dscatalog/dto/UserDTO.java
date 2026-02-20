@@ -2,6 +2,8 @@ package com.ceglauskis.dscatalog.dto;
 
 import com.ceglauskis.dscatalog.entities.Role;
 import com.ceglauskis.dscatalog.entities.User;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,8 +12,10 @@ import java.util.Set;
 public class UserDTO {
 
     private Long id;
+    @NotBlank(message = "Required field")
     private String firstName;
     private String lastName;
+    @Email(message = "Please send a valid email address")
     private String email;
 
     private List<RoleDTO> roles = new ArrayList<>();
