@@ -2,6 +2,7 @@ package com.ceglauskis.dscatalog.dto;
 
 import com.ceglauskis.dscatalog.entities.Role;
 import com.ceglauskis.dscatalog.entities.User;
+import com.ceglauskis.dscatalog.services.validation.UserInsertValid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 

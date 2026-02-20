@@ -1,5 +1,8 @@
 package com.ceglauskis.dscatalog.dto;
 
+import com.ceglauskis.dscatalog.services.validation.UserInsertValid;
+
+@UserInsertValid
 public class UserInsertDTO extends UserDTO {
 
     private String password;
