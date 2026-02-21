@@ -8,7 +8,7 @@ import jakarta.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.ceglauskis.dscatalog.dto.UserInsertDTO;
+import com.ceglauskis.dscatalog.dto.users.UserInsertDTO;
 import com.ceglauskis.dscatalog.entities.User;
 import com.ceglauskis.dscatalog.repositories.UserRepository;
 import com.ceglauskis.dscatalog.resources.exceptions.FieldMessage;

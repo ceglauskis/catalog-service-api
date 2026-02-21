@@ -1,7 +1,7 @@
 package com.ceglauskis.dscatalog.tests;
 
 import com.ceglauskis.dscatalog.dto.ProductDTO;
-import com.ceglauskis.dscatalog.dto.UserDTO;
+import com.ceglauskis.dscatalog.dto.users.UserDTO;
 import com.ceglauskis.dscatalog.entities.Category;
 import com.ceglauskis.dscatalog.entities.Product;
 import com.ceglauskis.dscatalog.entities.Role;

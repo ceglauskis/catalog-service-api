@@ -1,8 +1,9 @@
 package com.ceglauskis.dscatalog.services;
 
 import com.ceglauskis.dscatalog.dto.RoleDTO;
-import com.ceglauskis.dscatalog.dto.UserDTO;
-import com.ceglauskis.dscatalog.dto.UserInsertDTO;
+import com.ceglauskis.dscatalog.dto.users.UserDTO;
+import com.ceglauskis.dscatalog.dto.users.UserInsertDTO;
+import com.ceglauskis.dscatalog.dto.users.UserUpdateDTO;
 import com.ceglauskis.dscatalog.entities.Role;
 import com.ceglauskis.dscatalog.entities.User;
 import com.ceglauskis.dscatalog.repositories.RoleRepository;
@@ -54,7 +55,7 @@ public class UserService {
     }
 
     @Transactional
-    public UserDTO update(Long id, UserDTO dto) {
+    public UserDTO update(Long id, UserUpdateDTO dto) {
         try {
             User entity = repository.getReferenceById(id);
             copyDtotoEntity(dto, entity);

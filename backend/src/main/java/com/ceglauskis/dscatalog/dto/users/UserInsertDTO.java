@@ -1,4 +1,4 @@
-package com.ceglauskis.dscatalog.dto;
+package com.ceglauskis.dscatalog.dto.users;
 
 import com.ceglauskis.dscatalog.services.validation.UserInsertValid;
 
